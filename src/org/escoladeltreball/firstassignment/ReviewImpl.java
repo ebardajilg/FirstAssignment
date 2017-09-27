@@ -4,7 +4,7 @@
 package org.escoladeltreball.firstassignment;
 
 /**
- * @author Pep Méndez
+ * @author Erik Bardajil
  *
  */
 public final class ReviewImpl implements Review {
@@ -37,7 +37,17 @@ public final class ReviewImpl implements Review {
 	 */
 	@Override
 	public int[] merge(int[] values, int n) {
-		return null;
+		int [] arraye = new int [values.length +1];
+		int i = 0;
+		while (i < values.length && values[i] < n) {
+			arraye[i] = values[i];
+			i++;
+		}
+		arraye[i] = n;
+		for (; i < values.length ; i++) {
+			arraye[i+1] = values[i];
+		}
+		return arraye;
 	}
 
 	/*
